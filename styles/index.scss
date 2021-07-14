@@ -1,0 +1,408 @@
+//Fonts
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+//Colors
+$primaryColor: #9727ff;
+$black: #18213a;
+$white: #f4f4f4;
+$sliderBackground: #aeaeae;
+$shadow: #ae68f0;
+
+// Mixins
+
+//Default Styles
+
+button {
+  padding: 1rem 3rem;
+  background-color: $primaryColor;
+  color: $white;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    background-color: $black;
+    width: 0.5rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $primaryColor;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+.home {
+  height: 100vh;
+  background-image: url("../assets/Shape1.png"), url("../assets/Shape2.png"),
+    url("../assets/Shape3.png"), url("../assets/Rectangle2.png"),
+    url("../assets/Rectangle1.png"), url("../assets/Rectangle3.png");
+  background-position: bottom 2rem left 2rem, top 1rem right 2rem,
+    top 8rem left 10rem, bottom -9% left 0, top 0 left 0, top 0 right 0;
+  background-size: 1.8rem, 1.8rem, 10rem, 100vw, 100vw 100vh, auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  nav {
+    display: flex;
+    padding: 3rem 10rem;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      span {
+        color: $white;
+        font-size: 3rem;
+        font-weight: bolder;
+      }
+    }
+    .links {
+      list-style-type: none;
+      display: flex;
+      li {
+        margin: 0 0.8rem;
+        color: $black;
+        font-size: larger;
+        cursor: pointer;
+      }
+    }
+  }
+  .content {
+    margin: 5rem 16rem;
+    color: $white;
+    width: 70%;
+    .title {
+      font-size: 5rem;
+    }
+    .subTitle {
+      font-size: 3rem;
+    }
+    .description {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.about {
+  background-image: url("../assets/Shape4.png"), url("../assets/Shape4.png");
+  background-size: 10rem;
+  background-position: top 3rem right 6rem, bottom 3rem left 6rem;
+  background-repeat: no-repeat;
+  color: $black;
+  padding: 5rem 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .title {
+    width: 40%;
+    text-align: center;
+    color: $primaryColor;
+  }
+  .subTitle {
+    margin: 2rem 0;
+    width: 70%;
+    text-align: center;
+  }
+  .bars-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    .progress-container {
+      .detail {
+        display: flex;
+        justify-content: space-between;
+      }
+      progress {
+        -webkit-appearance: none;
+        height: 0.6rem;
+        width: 20rem;
+        &::-webkit-progress-bar {
+          background-color: $sliderBackground;
+        }
+        &::-webkit-progress-value {
+          background-color: $primaryColor;
+        }
+      }
+    }
+  }
+}
+
+.skills {
+  padding: 5rem 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $black;
+  .title {
+    color: $primaryColor;
+    text-transform: uppercase;
+  }
+  .description {
+    width: 50%;
+    text-align: center;
+  }
+  .skills-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .skill {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 0.6rem;
+      height: 20rem;
+      transition: 0.3s ease-in-out;
+      box-shadow: $shadow 0px 5px 15px 0px;
+      &:hover {
+        border-bottom: $primaryColor 0.3rem solid;
+        .icon {
+          background-color: $primaryColor;
+          i {
+            color: $white;
+          }
+        }
+      }
+      .title {
+        color: $black;
+        text-transform: uppercase;
+      }
+      .description {
+        width: 80%;
+      }
+      .icon {
+        height: 4rem;
+        width: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0.15rem solid $primaryColor;
+        border-radius: 100%;
+        margin-bottom: 1rem;
+        i {
+          font-size: 1.5rem;
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.service {
+  height: 10rem;
+  background-color: $primaryColor;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: $white;
+  .milestone {
+    text-align: center;
+    h2 {
+      font-size: x-large;
+    }
+    h3 {
+      font-size: medium;
+      font-weight: 500;
+    }
+  }
+}
+
+.experience {
+  background-image: url("../assets/Rectangle4.png");
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  background-position: top -4rem right 0;
+  // height: 100vh;
+  padding: 5rem 20rem;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .title {
+    text-transform: uppercase;
+    color: $primaryColor;
+  }
+  .cards {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+    .card {
+      box-shadow: black 0px 5px 15px 0px;
+      padding: 0 2rem;
+      margin: 3rem 0;
+      width: 17rem;
+      height: 14rem;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .title {
+        margin: 0.5rem 0;
+        font-size: 1.3rem;
+        color: $white;
+      }
+      .icon {
+        color: $primaryColor;
+        i {
+          font-size: 2rem;
+        }
+      }
+      .subTitle {
+        margin: 0.4rem 0;
+        font-size: 0.9rem;
+      }
+      .description {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.portfolio {
+  color: $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 4rem 0;
+  .title {
+    color: $primaryColor;
+    text-transform: uppercase;
+  }
+  .portfolios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    img {
+      height: 15rem;
+    }
+  }
+}
+
+.project {
+  height: 20rem;
+  background-color: $primaryColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("../assets/Shape7.png"), url("../assets/Shape8.png"),
+    url("../assets/Shape5.png"), url("../assets/Shape6.png"),
+    url("../assets/Shape7.png"), url("../assets/Shape5.png"),
+    url("../assets/Shape6.png");
+  background-repeat: no-repeat;
+  background-size: auto, 10rem, 9rem, 5rem, 10rem, 9rem, 5rem;
+  background-position: left 40rem top 3rem, bottom 1rem left 3rem,
+    bottom 7rem left 2rem, bottom 2rem left 14rem, top 1rem right 3rem,
+    top 7rem right 2rem, top 2rem right 14rem;
+  .title {
+    text-transform: uppercase;
+    color: white;
+  }
+  .bar {
+    width: 10rem;
+    background-color: white;
+    margin: 2rem 0;
+  }
+  button {
+    background-color: $black;
+  }
+}
+
+.contact {
+  background-image: url("../assets/Rectangle5.png");
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  background-position: top -4rem right 0;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 30rem;
+  .title {
+    color: $primaryColor;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+  .contact-container {
+    display: flex;
+
+    .details-container {
+      .detail {
+        width: 80%;
+        span {
+          color: $primaryColor;
+        }
+      }
+      .bar {
+        width: 5rem;
+
+        background-color: $primaryColor;
+        margin: 1rem 0;
+        border-color: $primaryColor;
+      }
+    }
+    .contact-form {
+      .row {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        input {
+          background-color: transparent;
+          border-color: $primaryColor;
+          height: 2.5rem;
+          border-width: 2px;
+          border-style: solid;
+          color: white;
+          padding: 0 1rem;
+          &::placeholder {
+            color: white;
+          }
+        }
+        textarea {
+          width: 100%;
+          background-color: transparent;
+          border-color: $primaryColor;
+          color: white;
+          border-width: 2px;
+          padding: 1rem 1rem;
+          &::placeholder {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  color: $primaryColor;
+}
